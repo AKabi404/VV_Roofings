@@ -3,12 +3,9 @@ import img10 from "../assets/images/img10.jpg";
 function AboutCompany() {
   return (
     <section id="about" className="about-company">
-      {/* LEFT IMAGE */}
       <div className="about-image">
         <img src={img10} alt="VV Roofing Company" />
       </div>
-
-      {/* RIGHT CONTENT */}
       <div className="about-content">
         <h2>About VV Roofing</h2>
         <p>
@@ -29,3 +26,4 @@ function AboutCompany() {
 }
 
 export default AboutCompany;
+
