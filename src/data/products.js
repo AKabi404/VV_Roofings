@@ -1,6 +1,6 @@
 
-import img1 from "../assets/images/img1.jpg";
-import img17 from "../assets/images/img17.jpg";
+import img30 from "../assets/images/img1.jpg";
+import img31 from "../assets/images/img17.jpg";
 import img24 from "../assets/images/img24.jpg";
 import img14 from "../assets/images/img14.jpg";
 import img13 from "../assets/images/img13.jpg";
@@ -9,11 +9,11 @@ import img12 from "../assets/images/img12.jpg";
 export const products = [
   {
     id: "stone-coated-metal",
-    title: "Stone-Coated Metal Roofing",
+    title: "Ceramic Clay Tile",
     image: img1,
     shortDesc: "Durable, weather-resistant roofing sheets.",
     fullDesc:
-      "Stone-coated metal roofing offers superior durability, excellent weather resistance, and a premium finish. It is designed to withstand extreme weather conditions while enhancing the modern look of residential and commercial buildings."
+      "Ceramic Clay Tile offers superior durability, excellent weather resistance, and a premium finish. It is designed to withstand extreme weather conditions while enhancing the modern look of residential and commercial buildings."
   },
   {
     id: "ventilation-blocks",
@@ -25,11 +25,11 @@ export const products = [
   },
   {
     id: "designer-sheets",
-    title: "Designer Roofing Sheets",
+    title: "Ceramic Clay Tile",
     image: img24,
-    shortDesc: "Modern roofing sheets with style.",
+    shortDesc: "Modern Clay Tiles with style.",
     fullDesc:
-      "Designer roofing sheets are available in various colors and patterns, combining durability with elegant aesthetics for long-lasting roofing solutions."
+      "Ceramic Clay Tiles are available in various colors and patterns, combining durability with elegant aesthetics for long-lasting roofing solutions."
   },
   {
     id: "stone-coated-sheets",

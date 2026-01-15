@@ -1,12 +1,12 @@
 
 import { useNavigate } from "react-router-dom";
 
-import img1 from "../assets/images/img1.jpg";
-import img17 from "../assets/images/img17.jpg";
-import img24 from "../assets/images/img24.jpg";
-import img14 from "../assets/images/img14.jpg";
-import img13 from "../assets/images/img13.jpg";
-import img12 from "../assets/images/img12.jpg";
+import img30 from "../assets/images/img30.jpg";
+import img31 from "../assets/images/img31.jpg";
+import img32 from "../assets/images/img32.jpg";
+import img33 from "../assets/images/img33.jpg";
+import img34 from "../assets/images/img34.jpg";
+import img35 from "../assets/images/img35.jpg";
 
 export default function CardsSection() {
   const navigate = useNavigate();
@@ -23,18 +23,18 @@ export default function CardsSection() {
           onClick={() =>
             navigate("/product/stone-coated-metal", {
               state: {
-                image: img1,
-                title: "Stone-Coated Metal Roofing",
+                image: img30,
+                title: "Ceramic Clay Tile",
                 description:
-                  "Stone-coated metal roofing offers superior durability, excellent weather resistance, and a premium finish suitable for modern residential and commercial buildings."
+                  "Ceramic Clay Tile offers superior durability, excellent weather resistance, and a premium finish suitable for modern residential and commercial buildings."
               }
             })
           }
         >
           <div className="card-image">
-            <img className="card-img" src={img1} alt="Stone-Coated Metal Roofing" />
+            <img className="card-img" src={img30} alt="Stone-Coated Metal Roofing" />
           </div>
-          <h3>Stone-Coated Metal Roofing</h3>
+          <h3>Ceramic Clay Tile</h3>
           <p>Durable, weather-resistant roofing sheets with a premium finish.</p>
         </div>
 
@@ -43,7 +43,7 @@ export default function CardsSection() {
           onClick={() =>
             navigate("/product/ventilation-blocks", {
               state: {
-                image: img17,
+                image: img31,
                 title: "Designer Ventilation Blocks",
                 description:
                   "Designer ventilation blocks improve airflow while adding architectural beauty to walls and facades."
@@ -52,7 +52,7 @@ export default function CardsSection() {
           }
         >
           <div className="card-image">
-            <img className="card-img" src={img17} alt="Designer Ventilation Blocks" />
+            <img className="card-img" src={img31} alt="Designer Ventilation Blocks" />
           </div>
           <h3>Designer Ventilation Blocks</h3>
           <p>Aesthetic clay ventilation blocks for better airflow.</p>
@@ -64,18 +64,18 @@ export default function CardsSection() {
             navigate("/product/designer-sheets", {
               state: {
                 image: img24,
-                title: "Designer Roofing Sheets",
+                title: "Ceramic Clay Tile",
                 description:
-                  "Modern roofing sheets available in various colors and patterns, offering durability with style."
+                  "Ceramic Clay Tiles are available in various colors and patterns, offering durability with style."
               }
             })
           }
         >
           <div className="card-image">
-            <img className="card-img" src={img24} alt="Designer Roofing Sheets" />
+            <img className="card-img" src={img32} alt="Designer Roofing Sheets" />
           </div>
-          <h3>Designer Roofing Sheets</h3>
-          <p>Stylish roofing sheets with long-lasting performance.</p>
+          <h3>Ceramic Clay Tile</h3>
+          <p>Stylish Ceramic Tiles with long-lasting performance.</p>
         </div>
 
         <div
@@ -92,7 +92,7 @@ export default function CardsSection() {
           }
         >
           <div className="card-image">
-            <img className="card-img" src={img14} alt="Stone-Coated Roofing Sheets" />
+            <img className="card-img" src={img33} alt="Stone-Coated Roofing Sheets" />
           </div>
           <h3>Stone-Coated Roofing Sheets</h3>
           <p>Elegant stone-coated roofing solutions.</p>
@@ -112,7 +112,7 @@ export default function CardsSection() {
           }
         >
           <div className="card-image">
-            <img className="card-img" src={img13} alt="Classic Metal Roof Tiles" />
+            <img className="card-img" src={img34} alt="Classic Metal Roof Tiles" />
           </div>
           <h3>Classic Metal Roof Tiles</h3>
           <p>Reliable metal tiles with timeless design.</p>
@@ -132,7 +132,7 @@ export default function CardsSection() {
           }
         >
           <div className="card-image">
-            <img className="card-img" src={img12} alt="Modern Roofing Tile Collection" />
+            <img className="card-img" src={img35} alt="Modern Roofing Tile Collection" />
           </div>
           <h3>Modern Roofing Tile Collection</h3>
           <p>Modern tiles with color variety and protection.</p>

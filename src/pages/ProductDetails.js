@@ -9,10 +9,10 @@ import img12 from "../assets/images/img12.jpg";
 
 const products = {
   "stone-coated-metal": {
-    title: "Stone-Coated Metal Roofing",
+    title: "Ceramic Clay Tile",
     image: img1,
     description:
-      "Stone-coated metal roofing is a premium roofing solution designed to deliver unmatched durability, weather resistance, and long-term performance. Manufactured using high-grade steel coated with stone granules, this roofing system offers excellent protection against harsh sunlight, heavy rain, strong winds, and corrosion. Its multi-layered construction enhances strength while reducing noise during rainfall, making it ideal for residential, commercial, and industrial buildings.\n\nIn addition to durability, stone-coated metal roofing enhances the overall appearance of a structure with its elegant textures and natural color finishes. It mimics the look of traditional tiles while maintaining the lightweight advantages of metal roofing. This roofing solution is fire-resistant, energy-efficient, and requires minimal maintenance, making it a cost-effective investment over time.\n\nVV Roofing’s stone-coated metal roofing products are engineered to meet modern architectural standards and are suitable for villas, apartments, warehouses, factories, and resorts. With superior insulation properties and long service life, this roofing option ensures safety, comfort, and aesthetic appeal for years to come.",
+      "Ceramic Clay Tile is a premium roofing solution designed to deliver unmatched durability, weather resistance, and long-term performance. Manufactured using high-grade steel coated with stone granules, this roofing system offers excellent protection against harsh sunlight, heavy rain, strong winds, and corrosion. Its multi-layered construction enhances strength while reducing noise during rainfall, making it ideal for residential, commercial, and industrial buildings.\n\nIn addition to durability, Ceramic Clay Tile enhances the overall appearance of a structure with its elegant textures and natural color finishes. It mimics the look of traditional tiles while maintaining the lightweight advantages of metal roofing. This roofing solution is fire-resistant, energy-efficient, and requires minimal maintenance, making it a cost-effective investment over time.\n\nVV Roofing’s Ceramic Clay Tile products are engineered to meet modern architectural standards and are suitable for villas, apartments, warehouses, factories, and resorts. With superior insulation properties and long service life, this roofing option ensures safety, comfort, and aesthetic appeal for years to come.",
   },
 
   "ventilation-blocks": {
@@ -23,10 +23,10 @@ const products = {
   },
 
   "designer-sheets": {
-    title: "Designer Roofing Sheets",
+    title: "Ceramic Clay Tile",
     image: img24,
     description:
-      "Designer roofing sheets combine modern aesthetics with exceptional durability, making them a popular choice for contemporary construction projects. Manufactured using high-quality materials, these sheets are engineered to withstand extreme weather conditions while maintaining their structural integrity and visual appeal.\n\nAvailable in a wide range of colors, textures, and profiles, designer roofing sheets allow architects and homeowners to achieve customized roofing designs. They offer excellent resistance to heat, UV rays, corrosion, and moisture, ensuring long-term performance with minimal maintenance.\n\nVV Roofing’s designer roofing sheets are suitable for residential buildings, industrial sheds, commercial complexes, and agricultural structures.",
+      "Ceramic Clay Tile combine modern aesthetics with exceptional durability, making them a popular choice for contemporary construction projects. Manufactured using high-quality materials, these Tiles are engineered to withstand extreme weather conditions while maintaining their structural integrity and visual appeal.\n\nAvailable in a wide range of colors, textures, and profiles, designer roofing sheets allow architects and homeowners to achieve customized roofing designs. They offer excellent resistance to heat, UV rays, corrosion, and moisture, ensuring long-term performance with minimal maintenance.\n\nVV Roofing’s Ceramic Clay Tiles are suitable for residential buildings, industrial sheds, commercial complexes, and agricultural structures.",
   },
 
   "stone-coated-sheets": {
