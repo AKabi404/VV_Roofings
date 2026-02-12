@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Global responsive helpers */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, picture, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  --site-max-width: 1200px;
+  --page-padding: 16px;
+}
+
+.container {
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
