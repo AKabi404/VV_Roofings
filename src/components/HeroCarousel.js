@@ -21,7 +21,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <div className="carousel">
+    <div id="home"className="carousel">
       <Slider {...settings}>
 
         <div className="slide">
