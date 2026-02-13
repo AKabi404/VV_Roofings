@@ -3,45 +3,233 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  background: #111;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background: linear-gradient(180deg, #111, #0b0b0b);
   color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
-.header nav {
+/* LOGO CONTAINER */
+.logo {
   display: flex;
-  gap: 30px; /* FIXED LINK MERGE ISSUE */
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
 }
 
-.header nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
+/* SVG LOGO IMAGE */
+.logo-img {
+  width: 34px;
+  height: 34px;
+  display: block;
+
+  /* SVG rendering quality */
+  object-fit: contain;
+  flex-shrink: 0;
+
+  /* Clean look on dark header */
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+}
+
+/* BRAND HIGHLIGHT */
+.logo span {
+  color: #f4b400; /* premium gold */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 20px;
+    gap: 8px;
+  }
+
+  .logo-img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+/* HAMBURGER */
+.menu-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.menu-hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* LOGO */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  z-index: 1;
 }
 
 .logo span {
   color: #f4b400;
 }
 
+/* PHONE CTA */
 .contact-btn {
-  border: 2px solid #f4b400;   /* Border color */
-  background-color: #f4b400;   /* Background color */
-  color: #000;                 /* Text color */
-  padding: 8px 18px;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
+  text-decoration: none;
+  background: linear-gradient(135deg, #f4b400, #ffcc33);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(244,180,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
 }
 
-/* Optional hover effect */
 .contact-btn:hover {
-  background-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(244,180,0,0.6);
+}
+
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #111, #000);
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transition: left 0.35s ease;
+  z-index: 1000;
+  box-shadow: 4px 0 30px rgba(0,0,0,0.8);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 32px;
+  position: relative;
+}
+
+.sidebar a::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  width: 6px;
+  height: 6px;
+  background: #f4b400;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar a:hover {
   color: #f4b400;
+}
+
+.sidebar a:hover::before {
+  opacity: 1;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 900;
+}
+
+/* ========================= */
+/* 📱 MOBILE FIX (REAL FIX) */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .header {
+    padding: 14px 16px;
+  }
+
+  /* FORCE MOBILE LAYOUT */
+  .header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .menu-hamburger {
+    justify-self: start;
+  }
+
+  .logo {
+    position: relative;
+    left: auto;
+    transform: none;
+    justify-self: center;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .contact-btn {
+    justify-self: end;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .menu-hamburger span {
+    width: 22px;
+    height: 2.5px;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px) {
+
+  .header {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .contact-btn {
+    display: inline-flex;   /* 👈 SHOW PHONE */
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+    justify-self: center;
+  }
 }
 
 
@@ -98,25 +286,61 @@ body {
 /* 🔥 CARD CONTAINER */
 .card {
   background: #fff;
-  border-radius: 12px;
-  overflow: hidden;              /* locks everything inside */
+  border-radius: 14px;
+  overflow: hidden;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
+  cursor: pointer;
+
+  /* 🔥 BASE SHADOW */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    opacity 0.35s ease;
 }
+
+/* 🔥 IMAGE-GLOW BACKGROUND */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 193, 7, 0.45),
+    rgba(255, 152, 0, 0.35)
+  );
+  filter: blur(28px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+/* 🔥 HOVER EFFECT */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* 🔥 CLICK / NAVIGATION EFFECT */
+.card.fade-out {
+  opacity: 0;
+  transform: scale(0.92);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 🔥 SECTION TITLE */
 .cards h2 {
-  text-align: center;      /* 🔥 centers text */
-  margin: 0 auto 40px;     /* 🔥 centers block + spacing */
+  text-align: center;
+  margin: 0 auto 40px;
   width: 100%;
   font-size: 32px;
-}
-
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* 🔥 GRID */
@@ -129,27 +353,33 @@ body {
   padding: 0 20px;
 }
 
-/* 🔥 IMAGE CONTAINER (FIXED RATIO) */
+/* 🔥 IMAGE CONTAINER */
 .card-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;          /* 🔥 SAME SIZE FOR ALL IMAGES */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #f5f5f5;           /* avoids white gaps */
+  background: #f5f5f5;
 }
 
 /* 🔥 IMAGE */
 .card-image img {
   position: absolute;
-  inset: 0;                      /* top:0 right:0 bottom:0 left:0 */
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;             /* 🔥 crop, not stretch */
+  object-fit: cover;
   object-position: center;
   display: block;
+  transition: transform 0.45s ease;
 }
 
-/* 🔥 TEXT FIX */
+/* 🔥 IMAGE ZOOM */
+.card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+/* 🔥 TEXT */
 .card h3 {
   margin: 16px 12px 8px;
   font-size: 20px;
@@ -166,6 +396,10 @@ body {
 @media (max-width: 768px) {
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card:active {
+    transform: scale(0.96);
   }
 }
 
@@ -203,40 +437,57 @@ body {
 /* ================= ABOUT COMPANY (AFTER VIDEO) ================= */
 .about-company {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* equal width */
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   padding: 70px 40px;
-  align-items: stretch; /* 🔥 force equal height */
+  align-items: stretch;
   background: #f9f9f9;
 }
 
 /* 🔥 LEFT IMAGE CONTAINER */
 .about-image {
   height: 100%;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
-/* 🔥 IMAGE FILLS LEFT SIDE */
+/* 🔥 IMAGE FILLS LEFT SIDE + PREMIUM CARD */
 .about-image img {
   width: 100%;
-  height: 100%;              /* 🔥 KEY FIX */
-  object-fit: cover;         /* 🔥 no distortion */
-  border-radius: 12px;
+  height: 100%;
+  object-fit: cover;
   display: block;
+  border-radius: 14px;
+
+  /* 🔥 STRONGER & NOTICEABLE */
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 2px rgba(255, 193, 7, 0.35);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 🔥 IMAGE HOVER (CLEAR DIFFERENCE) */
+.about-image img:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 2px rgba(255, 193, 7, 0.6);
 }
 
 /* 🔥 RIGHT CONTENT CARD */
 .about-content {
   background: #ffffff;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover stays the same */
 .about-content:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
 }
 
 /* TEXT */
@@ -264,72 +515,119 @@ body {
   }
 }
 
-/* PRODUCT DETAILS SECTION */
+/* 🔥 PRODUCT DETAILS SECTION */
 .product-details {
   padding: 60px 40px;
   max-width: 1200px;
   margin: auto;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* BACK LINK */
+/* PAGE ENTER */
+.product-details.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* PAGE EXIT */
+.product-details.fade-out {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+/* 🔥 FADE ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .back-link {
   display: inline-block;
   margin-bottom: 25px;
-  color: #007bff;
+  color: #ff9800;
   font-weight: 500;
   text-decoration: none;
+
+  transform: translateX(0); /* 👈 important */
+  transition: transform 0.25s ease, color 0.25s ease;
+  will-change: transform;
 }
 
 .back-link:hover {
-  text-decoration: underline;
+  transform: translateX(-6px);
+  color: #e68900;
 }
 
-/* GRID LAYOUT */
+/* 🔥 GRID LAYOUT */
 .product-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* EQUAL SIZE */
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: stretch; /* FORCE SAME HEIGHT */
+  align-items: stretch;
 }
 
-/* IMAGE CONTAINER */
+/* 🔥 IMAGE CONTAINER (CARD STYLE) */
 .product-image {
   height: 100%;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
+  position: relative;
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
+/* 🔥 IMAGE */
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* FIX IMAGE PERFECTLY */
-  border-radius: 14px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
 }
 
-/* CONTENT BOX */
+/* 🔥 IMAGE HOVER EFFECT */
+.product-image:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.28);
+}
+
+.product-image:hover img {
+  transform: scale(1.08);
+}
+
+/* 🔥 CONTENT BOX */
 .product-content {
-  padding: 30px;
-  border-radius: 14px;
+  padding: 32px;
+  border-radius: 16px;
   background: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: all 0.35s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* HOVER EFFECT */
+/* 🔥 CONTENT HOVER */
 .product-content:hover {
-  background: #f9f9f9;
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
 }
 
-/* TITLE */
+/* 🔥 TITLE */
 .product-content h2 {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   color: #111;
-  font-size: 26px;
+  font-size: 28px;
 }
 
-/* DESCRIPTION */
+/* 🔥 DESCRIPTION */
 .product-content p {
   line-height: 1.9;
   color: #555;
@@ -337,7 +635,7 @@ body {
   white-space: pre-line;
 }
 
-/* RESPONSIVE */
+/* 🔥 RESPONSIVE */
 @media (max-width: 900px) {
   .product-grid {
     grid-template-columns: 1fr;
@@ -348,35 +646,94 @@ body {
   }
 }
 
-/* ================= FOOTER ================= */
-.footer {
-  background: #000;
-  color: #aaa;
-  padding: 40px 20px 20px;
+.product-details.fade-out {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+
+/* ================= FOOTER ================= */
+.footer {
+  background: linear-gradient(180deg, #000, #111);
+  color: #aaa;
+  padding: 50px 30px 20px;
+}
+
+/* FOUR ITEMS IN ONE LINE */
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  max-width: 1200px;
+  margin: auto;
   text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer-item h4 {
   color: #f4b400;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
 }
 
 .footer-item p {
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* Links styling */
+.footer a {
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #f4b400;
+}
+
+/* Instagram highlight */
+.social a {
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .footer-bottom {
-  margin-top: 30px;
+  margin-top: 40px;
   border-top: 1px solid #333;
   padding-top: 15px;
-  font-size: 14px;
-  text-align: center; 
+  font-size: 13px;
+  text-align: center;
+}
+
+.footer-bottom span {
+  color: #f4b400;
+  font-weight: 600;
+}
+
+.follow-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.insta-icon {
+  width: 30px;
+  height: 30px;
 }
 
 
@@ -395,4 +752,64 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Additional mobile tweaks */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 16px;
+    align-items: center;
+  }
+
+  .logo {
+    position: static;
+    left: auto;
+    transform: none;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .menu-hamburger {
+    position: relative;
+    order: -1;
+  }
+
+  .contact-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .image-box {
+    height: 52vh;
+  }
+
+  .carousel {
+    padding: 16px 0;
+  }
+
+  .video {
+    padding: 30px 16px;
+  }
+
+  .video-container iframe,
+  .video-container video {
+    height: 220px;
+  }
+
+  .card-grid {
+    gap: 18px;
+    margin: 20px auto;
+  }
+
+  .about-company {
+    padding: 30px 16px;
+  }
+
+  .product-details {
+    padding: 20px 16px;
+  }
+
+  .product-image {
+    height: 260px;
+  }
 }

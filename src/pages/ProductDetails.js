@@ -1,67 +1,95 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
-import img1 from "../assets/images/img1.jpg";
-import img17 from "../assets/images/img17.jpg";
-import img24 from "../assets/images/img24.jpg";
-import img14 from "../assets/images/img14.jpg";
-import img13 from "../assets/images/img13.jpg";
-import img12 from "../assets/images/img12.jpg";
+import img116 from "../assets/images/img116.jpeg";
+import img115 from "../assets/images/img115.jpeg";
+import img114 from "../assets/images/img114.jpeg";
+import img113 from "../assets/images/img113.jpeg";
+import img112 from "../assets/images/img112.jpeg";
+import img111 from "../assets/images/img111.jpeg";
+import img201 from "../assets/images/img201.jpeg";
+import img202 from "../assets/images/img202.jpeg";
+import img203 from "../assets/images/img203.jpeg";
 
 const products = {
   "stone-coated-metal": {
-    title: "Ceramic Clay Tile",
-    image: img1,
-    description:
-      "Ceramic Clay Tile is a premium roofing solution designed to deliver unmatched durability, weather resistance, and long-term performance. Manufactured using high-grade steel coated with stone granules, this roofing system offers excellent protection against harsh sunlight, heavy rain, strong winds, and corrosion. Its multi-layered construction enhances strength while reducing noise during rainfall, making it ideal for residential, commercial, and industrial buildings.\n\nIn addition to durability, Ceramic Clay Tile enhances the overall appearance of a structure with its elegant textures and natural color finishes. It mimics the look of traditional tiles while maintaining the lightweight advantages of metal roofing. This roofing solution is fire-resistant, energy-efficient, and requires minimal maintenance, making it a cost-effective investment over time.\n\nVV Roofing’s Ceramic Clay Tile products are engineered to meet modern architectural standards and are suitable for villas, apartments, warehouses, factories, and resorts. With superior insulation properties and long service life, this roofing option ensures safety, comfort, and aesthetic appeal for years to come.",
-  },
+    title: "Stone Coated Roof Tile",
+    image: img116,
+    description:"Stone Coated Roof Tiles represent the pinnacle of modern roofing technology, blending aesthetic elegance with industrial-grade strength. Each tile is stamped from high-quality Aluzinc steel, which provides up to nine times the corrosion resistance of traditional galvanized steel. The surface is then coated with natural stone granules bonded with an advanced acrylic polymer, creating a textured finish that resists fading and prevents the metallic 'clatter' sound during heavy rain.\n\nOne of the most significant advantages of this system is its lightweight nature. Weighing nearly 85% less than concrete or clay tiles, it significantly reduces the structural load on the building's framework, often eliminating the need for extra reinforcement. The unique interlocking installation creates a structural web that is exceptionally resistant to high-velocity hurricanes, heavy snow loads, and even earthquakes.\n\nVV Roofing’s Stone Coated tiles are non-combustible (Class A fire rated) and energy-efficient, reflecting a significant portion of solar radiation to keep interiors cool. Available in profiles ranging from classic Mediterranean tile to traditional wood-shake textures, they offer a premium, maintenance-free solution for luxury residences, resorts, and commercial landmarks that require both beauty and resilience."  },
 
   "ventilation-blocks": {
-    title: "Designer Ventilation Blocks",
-    image: img17,
-    description:
-      "Designer ventilation blocks are an essential architectural element that enhances airflow while adding visual appeal to buildings. Crafted from high-quality clay or concrete materials, these blocks allow natural air circulation, reducing indoor heat and improving ventilation without compromising privacy or security.\n\nVV Roofing’s ventilation blocks are available in a variety of designs, patterns, and finishes, making them suitable for residential homes, commercial spaces, boundary walls, and facades. They help maintain a comfortable indoor environment by allowing continuous airflow while preventing moisture buildup.\n\nApart from functionality, these ventilation blocks contribute significantly to modern and traditional architectural aesthetics. Their durability, weather resistance, and low maintenance requirements make them a preferred choice among architects and builders.",
-  },
+    title: "ASA Coated UPVC Sheet",
+    image: img115,
+    description:"ASA Coated UPVC Roofing Sheets are a high-tech solution designed for industrial, agricultural, and residential applications. The sheets are manufactured using triple-layer co-extrusion technology. The top layer is coated with ASA (Acrylonitrile Styrene Acrylate), a high-weather-resistance resin that protects the sheet from UV radiation, moisture, and chemical exhaustion, ensuring the color remains vibrant for decades.\n\nThe middle layer consists of a specialized foam or reinforced structure that provides superior heat and sound insulation, making the building significantly cooler and quieter compared to metal roofing. The bottom layer is a high-toughness PVC material that ensures structural rigidity and chemical resistance from the inside. This combination makes the sheets completely rust-proof, making them the perfect choice for chemical factories, coastal areas, and warehouses.\n\nVV Roofing’s ASA UPVC sheets are lightweight, fire-retardant, and incredibly easy to install. Their anti-corrosive properties mean they do not require painting or specialized coatings throughout their lifespan. Whether it’s for a large-scale industrial plant or a modern residential porch, these sheets provide a cost-effective, energy-efficient roofing solution that stands up to the toughest environmental challenges."  },
 
   "designer-sheets": {
-    title: "Ceramic Clay Tile",
-    image: img24,
-    description:
-      "Ceramic Clay Tile combine modern aesthetics with exceptional durability, making them a popular choice for contemporary construction projects. Manufactured using high-quality materials, these Tiles are engineered to withstand extreme weather conditions while maintaining their structural integrity and visual appeal.\n\nAvailable in a wide range of colors, textures, and profiles, designer roofing sheets allow architects and homeowners to achieve customized roofing designs. They offer excellent resistance to heat, UV rays, corrosion, and moisture, ensuring long-term performance with minimal maintenance.\n\nVV Roofing’s Ceramic Clay Tiles are suitable for residential buildings, industrial sheds, commercial complexes, and agricultural structures.",
-  },
+    title: "Roofing Shingles",
+    image: img114,
+    description:"Roofing Shingles are one of the most popular and versatile roofing solutions available today. Composed of a heavy-duty fiberglass mat base coated with high-quality asphalt and ceramic-coated mineral granules, these shingles offer multi-layered protection against UV degradation and moisture penetration. They are specifically engineered to provide excellent resistance to high winds and heavy impact, ensuring your structure remains safe in all seasons.\n\nOne of the primary advantages of Roofing Shingles is their architectural versatility. Available in a wide array of colors and profiles—from 3-tab designs to dimensional architectural styles—they can complement any building aesthetic. Their flexible nature allows for easy installation on complex roof shapes, including steep slopes and curves. Additionally, the granules provide essential fire resistance and help reflect solar heat to improve energy efficiency.\n\nVV Roofing’s Shingle products are treated with specialized coatings to prevent algae growth and maintain their vibrant appearance over time. Ideal for residential villas, resorts, and premium commercial projects, these shingles provide a sophisticated, textured look that enhances curb appeal while offering a cost-effective, long-lasting roofing solution."  },
 
   "stone-coated-sheets": {
-    title: "Stone-Coated Roofing Sheets",
-    image: img14,
-    description:
-      "Stone-coated roofing sheets are designed to deliver superior protection and long-lasting beauty. These sheets feature a metal core coated with natural stone granules, providing excellent resistance against corrosion, fire, and extreme weather conditions.\n\nThe stone coating enhances insulation and reduces noise caused by rain or wind, creating a comfortable indoor environment. Their aesthetic finish gives a premium tiled appearance while offering the strength and flexibility of metal roofing.\n\nVV Roofing’s stone-coated roofing sheets are ideal for residential homes, commercial buildings, and luxury projects.",
-  },
+    title: "Hysquare UPVC Rainwater Gutter",
+    image: img113,
+    description:"The Hy-Square UPVC Rainwater Gutter system is a high-performance drainage solution engineered to handle heavy rainfall with ease. Manufactured from premium-grade Unplasticized Polyvinyl Chloride (UPVC), this system is completely rust-proof, chemical-resistant, and UV-stabilized to prevent brittleness or fading under harsh sunlight. The 'Hy-Square' design provides a deeper cross-section compared to traditional round gutters, allowing for significantly higher water-carrying capacity.\n\nPrecision-engineered with a focus on ease of installation, the system features heavy-duty brackets and high-quality rubber seals at every joint to ensure a 100% leak-proof performance. Its smooth internal surface prevents the accumulation of debris and silt, ensuring a free-flowing path to the downspouts. The square profile not only serves a functional purpose but also adds a clean, contemporary architectural line to the eaves of villas, factories, and commercial buildings.\n\nVV Roofing’s Hy-Square systems are built to endure external impacts and thermal expansion. Unlike metal gutters, UPVC operates silently during heavy rain and requires zero painting or anti-corrosion treatments. It is a cost-effective, long-lasting investment that protects your building’s foundation and walls from water damage and dampness for years to come."  },
 
   "metal-tiles": {
-    title: "Classic Metal Roof Tiles",
-    image: img13,
-    description:
-      "Classic metal roof tiles offer a perfect blend of traditional aesthetics and modern engineering. Designed to resemble conventional roof tiles, these metal tiles provide superior durability, lightweight performance, and weather resistance.\n\nThey are manufactured using high-strength steel with protective coatings that prevent rust, corrosion, and fading. These tiles are fire-resistant, energy-efficient, and capable of withstanding heavy rain, strong winds, and intense sunlight.\n\nVV Roofing’s metal roof tiles are ideal for residential villas and architectural projects.",
-  },
+    title: "Ceramic Clay Roof Tile",
+    image: img112,
+    description:"Ceramic Clay Roof Tiles are the gold standard for luxury and traditional architecture. Created by firing natural clay in high-temperature kilns, these tiles undergo a vitrification process that makes them incredibly hard and resistant to water absorption. Their high thermal mass allows them to absorb heat during the day and release it slowly at night, keeping interiors naturally cool in tropical climates.\n\nOne of the standout features of Ceramic tiles is their color permanence. Because the pigment is baked into the clay itself, the tiles will not fade, peel, or scratch, even after decades of exposure to harsh sun and salt air. They are naturally fireproof and provide excellent acoustic performance, dampening the sound of heavy rain and external noise better than almost any other roofing material.\n\nVV Roofing’s Ceramic Clay collection is available in a variety of profiles, including the classic 'S' shape (Spanish), Roman, and Flat styles. While they are heavier than metal alternatives, their longevity is unmatched—often lasting over 50 years with minimal maintenance. These tiles are the ideal choice for high-end villas, resorts, and heritage buildings where aesthetic prestige and environmental sustainability are top priorities."  },
 
   "modern-tiles": {
-    title: "Modern Roofing Tile Collection",
-    image: img12,
-    description:
-      "The modern roofing tile collection from VV Roofing is designed to meet contemporary architectural demands. These tiles combine innovative design, vibrant color options, and reliable performance to deliver stylish roofing solutions.\n\nManufactured using advanced technology, modern roofing tiles offer excellent resistance to heat, moisture, and environmental wear. They enhance thermal insulation and contribute to energy efficiency.\n\nSuitable for residential, commercial, and luxury projects, this tile collection provides long-lasting protection with minimal maintenance.",
-  },
+    title: "Water Proofing Solution",
+    image: img111,
+    description:"VV Roofing offers a comprehensive range of advanced Waterproofing Solutions designed to eliminate leaks and prevent moisture-related structural damage. Our systems utilize high-grade polymer-modified coatings and elastomeric liquid membranes that create a continuous, seamless barrier over concrete, metal, or fiber-cement surfaces. Unlike traditional felt, these modern solutions bond directly to the substrate, leaving no room for water to travel underneath.\n\nThese solutions are engineered to be highly flexible, allowing them to bridge hairline cracks and withstand the natural expansion and contraction of buildings during temperature shifts. They are UV-resistant, preventing the 'chalking' or brittleness often seen in standard paints, and provide excellent resistance to stagnant water. Many of our coatings also feature high solar reflectivity, which helps reduce surface temperatures and lowers cooling costs for the building below.\n\nFrom terrace gardens and flat RCC roofs to industrial gutters and basement walls, our waterproofing products ensure a dry and healthy environment. Our application process includes surface preparation, primer application, and reinforced mesh layering for high-stress areas, providing a robust defense system that significantly extends the lifespan of any residential or commercial property."  },
+
+    "profile-sheet": {
+  title: "Profile Sheet",
+  image: img201,
+  description: "Profile Sheets are manufactured using 100% certified Galvalume steel composed of 55% Aluminium, 43.4% Zinc, and 1.6% Silicon. This advanced metallic coating technology provides exceptional corrosion resistance, superior durability, and long service life, even in coastal and industrial environments.\n\nThe sheets are available in thickness options ranging from 0.28mm to 0.60mm, allowing flexibility for residential, commercial, agricultural, and industrial roofing applications. Customers can choose from 70 GSM, 150 GSM, and 200 GSM coating options for enhanced strength and weather protection.\n\nWith over 25+ vibrant colour options and both Glossy and Matte finish variants, Profile Sheets combine structural performance with modern aesthetics. Lightweight, easy to install, and low maintenance, they offer a cost-effective and reliable roofing solution designed to withstand extreme weather conditions while maintaining long-term visual appeal."
+},
+  "rv-liner-sheet": {
+  title: "VV Liner Sheet",
+  image: img202,
+  description: "VV  Liner Sheets are manufactured using 100% certified Galvalume steel composed of 55% Aluminium, 43.4% Zinc, and 1.6% Silicon. This advanced coating technology ensures superior corrosion resistance, high durability, and long-lasting structural performance in demanding environments.\n\nWith a standard width of 1174 mm, these sheets are specifically designed for interior roofing, wall cladding, and industrial shed lining applications. They are available in thickness options ranging from 0.28mm to 0.50mm, providing flexibility based on structural and project requirements.\n\nCustomers can choose from 70 GSM, 150 GSM, and 200 GSM coating options for enhanced protection and extended lifespan. Available in 25+ vibrant colour options along with Glossy and Matte finish variants, VV Liner Sheets combine functionality with a clean and professional finish.\n\nLightweight, easy to install, and low maintenance, VV Liner Sheets are ideal for warehouses, factories, commercial buildings, and large-scale industrial projects requiring durable internal protection and aesthetic consistency."
+},
+  "pure-aluminium-sheet": {
+  title: "Pure Aluminium Sheet",
+  image: img203,
+  description: "Pure Aluminium Sheets are manufactured using 3105 alloy grade and consist of 98% pure aluminium, 1.5% zinc, and 0.5% iron. This certified composition ensures excellent corrosion resistance, high strength-to-weight ratio, and long-lasting durability.\n\nAvailable in thickness options of 0.56 mm and 0.71 mm, these sheets are ideal for roofing, cladding, fabrication, and structural applications. Aluminium’s natural resistance to rust makes it highly suitable for coastal regions, industrial zones, and high-moisture environments.\n\nSourced from the trusted Jindal brand, these sheets guarantee premium quality, consistent performance, and superior surface finish. Lightweight, easy to install, and low maintenance, Pure Aluminium Sheets provide a reliable and long-term solution for residential, commercial, and industrial roofing projects."
+},
 };
 
 export default function ProductDetails() {
   const { id } = useParams();
-  const product = products[id];
+  const navigate = useNavigate();
+  const pageRef = useRef(null);
+
+  const product = products[id]; // ✅ FIX
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      pageRef.current.classList.add("enter");
+    });
+  }, []);
+
+  const handleBackClick = (e) => {
+    e.preventDefault();
+
+    pageRef.current.classList.remove("enter");
+    pageRef.current.classList.add("fade-out");
+
+    setTimeout(() => {
+      navigate("/");
+    }, 400);
+  };
 
   if (!product) {
-    return <h2 className="not-found">Product not found</h2>;
+    return <h2 style={{ padding: "40px" }}>Product not found</h2>;
   }
 
   return (
-    <section className="product-details">
-      <Link to="/" className="back-link">
+    <section className="product-details" ref={pageRef}>
+      <Link to="/" className="back-link" onClick={handleBackClick}>
         ← Back to Products
       </Link>
 
