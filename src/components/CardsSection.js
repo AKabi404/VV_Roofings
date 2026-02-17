@@ -10,6 +10,8 @@ import img111 from "../assets/images/img111.jpeg";
 import img201 from "../assets/images/img201.jpeg";
 import img202 from "../assets/images/img202.jpeg";
 import img203 from "../assets/images/img203.jpeg";
+import img204 from "../assets/images/img204.jpeg";
+import img205 from "../assets/images/img205.jpeg";
 
 export default function CardsSection() {
   const navigate = useNavigate();
@@ -166,81 +168,131 @@ export default function CardsSection() {
         </div>
 
         <div
-  className="card"
-  onClick={(e) =>
-    handleNavigate(
-      "/product/profile-sheet",
-      {
-        image: img201,
-        title: "Profile Sheet",
-        description:
-          "Premium 100% certified Galvalume roofing sheets made with 55% Aluminium, 43.4% Zinc, and 1.6% Silicon. Engineered for superior corrosion resistance, durability, and long-lasting performance across residential, commercial, and industrial applications."
-      },
-      e.currentTarget
-    )
-  }
->
-  <div className="card-image">
-    <img src={img201} alt="Profile Sheet" />
-  </div>
-  <h3>Profile Sheet</h3>
-  <p>
-    High-strength Galvalume roofing sheets available in multiple thicknesses,
-    GSM coatings, and 25+ vibrant colours.
-  </p>
-</div>
+          className="card"
+          onClick={(e) =>
+            handleNavigate(
+              "/product/profile-sheet",
+              {
+                image: img201,
+                title: "Profile Sheet",
+                description:
+                  "Premium 100% certified Galvalume roofing sheets made with 55% Aluminium, 43.4% Zinc, and 1.6% Silicon. Engineered for superior corrosion resistance, durability, and long-lasting performance across residential, commercial, and industrial applications."
+              },
+              e.currentTarget
+            )
+          }
+        >
+          <div className="card-image">
+            <img src={img201} alt="Profile Sheet" />
+          </div>
+          <h3>Profile Sheet</h3>
+          <p>
+            High-strength Galvalume roofing sheets available in multiple thicknesses,
+            GSM coatings, and 25+ vibrant colours.
+          </p>
+        </div>
 
-<div
-  className="card"
-  onClick={(e) =>
-    handleNavigate(
-      "/product/rv-liner-sheet",
-      {
-        image: img202,
-        title: "VV Liner Sheet",
-        description:
-          "High-performance 100% certified Galvalume VV Liner Sheets designed for interior roofing and wall cladding applications. Built with 55% Aluminium, 43.4% Zinc, and 1.6% Silicon for superior durability and corrosion resistance."
-      },
-      e.currentTarget
-    )
-  }
->
-  <div className="card-image">
-    <img src={img202} alt="VV Liner Sheet" />
-  </div>
-  <h3>VV Liner Sheet</h3>
-  <p>
-    Durable inner roofing sheets with multiple thickness, GSM, and finish
-    options for industrial and commercial structures.
-  </p>
-</div>
+        <div
+          className="card"
+          onClick={(e) =>
+            handleNavigate(
+              "/product/rv-liner-sheet",
+              {
+                image: img202,
+                title: "VV Liner Sheet",
+                description:
+                  "High-performance 100% certified Galvalume VV Liner Sheets designed for interior roofing and wall cladding applications. Built with 55% Aluminium, 43.4% Zinc, and 1.6% Silicon for superior durability and corrosion resistance."
+              },
+              e.currentTarget
+            )
+          }
+        >
+          <div className="card-image">
+            <img src={img202} alt="VV Liner Sheet" />
+          </div>
+          <h3>VV Liner Sheet</h3>
+          <p>
+            Durable inner roofing sheets with multiple thickness, GSM, and finish
+            options for industrial and commercial structures.
+          </p>
+        </div>
 
-    <div
-  className="card"
-  onClick={(e) =>
-    handleNavigate(
-      "/product/pure-aluminium-sheet",
-      {
-        image: img203,
-        title: "Pure Aluminium Sheet",
-        description:
-          "Premium 3105 alloy aluminium sheets made from 98% pure aluminium, offering excellent corrosion resistance, lightweight performance, and long-term durability."
-      },
-      e.currentTarget
-    )
-  }
->
-  <div className="card-image">
-    <img src={img203} alt="Pure Aluminium Sheet" />
-  </div>
-  <h3>Pure Aluminium Sheet</h3>
-  <p>
-    3105 alloy certified aluminium sheets from Jindal, engineered for strength,
-    weather resistance, and long service life.
-  </p>
-</div>
+        <div
+          className="card"
+          onClick={(e) =>
+            handleNavigate(
+              "/product/pure-aluminium-sheet",
+              {
+                image: img203,
+                title: "Pure Aluminium Sheet",
+                description:
+                  "Premium 3105 alloy aluminium sheets made from 98% pure aluminium, offering excellent corrosion resistance, lightweight performance, and long-term durability."
+              },
+              e.currentTarget
+            )
+          }
+        >
+          <div className="card-image">
+            <img src={img203} alt="Pure Aluminium Sheet" />
+          </div>
+          <h3>Pure Aluminium Sheet</h3>
+          <p>
+            3105 alloy certified aluminium sheets from Jindal, engineered for strength,
+            weather resistance, and long service life.
+          </p>
+        </div>
 
-      </div>
+        <div
+          className="card"
+          onClick={(e) =>
+            handleNavigate(
+              "/product/rv-tile-sheet",
+              {
+                image: img204,
+                title: "VV Tile Sheet - Glossy Finish",
+                description:
+                  "Premium 100% certified Galvalume VV Tile Sheets with a high-gloss finish, offering superior corrosion resistance, vibrant colors, and long-lasting durability."
+              },
+              e.currentTarget
+            )
+          }
+        >
+          <div className="card-image">
+            <img src={img204} alt="VV Tile Sheet Glossy Finish" />
+          </div>
+          <h3>VV Tile Sheet - Glossy Finish</h3>
+          <p>
+            High-gloss Galvalume tile sheets available in multiple GSM and thickness
+            options for premium roofing aesthetics.
+          </p>
+        </div>
+
+        <div
+          className="card"
+          onClick={(e) =>
+            handleNavigate(
+              "/product/rithvig-traditional-tile",
+              {
+                image: img205,
+                title: "VV Traditional Tile - Glossy Finish",
+                description:
+                  "Premium 100% certified Galvalume traditional tile sheets with a high-gloss finish, offering superior corrosion resistance, vibrant colors, and long-lasting roofing performance."
+              },
+              e.currentTarget
+            )
+          }
+        >
+          <div className="card-image">
+            <img src={img205} alt="VV Traditional Tile Glossy Finish" />
+          </div>
+          <h3>VV Traditional Tile - Glossy Finish</h3>
+          <p>
+            High-gloss traditional tile sheets engineered for durability,
+            weather resistance, and premium roof aesthetics.
+          </p>
+          </div>
+
+        </div>
     </section>
   );
 }

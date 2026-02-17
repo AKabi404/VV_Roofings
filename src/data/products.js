@@ -8,6 +8,9 @@ import img111 from "../assets/images/img111.jpeg";
 import img201 from "../assets/images/img201.jpeg";
 import img202 from "../assets/images/img202.jpeg";
 import img203 from "../assets/images/img203.jpeg";
+import img204 from "../assets/images/img204.jpeg";
+import img205 from "../assets/images/img205.jpeg";
+
 
 export const products = [
   {
@@ -67,5 +70,19 @@ export const products = [
   image: img203,
   shortDesc: "3105 alloy aluminium sheets made with 98% pure aluminium for superior corrosion resistance.",
   fullDesc: "Pure Aluminium Sheets are manufactured using 3105 alloy grade and consist of 98% pure aluminium, 1.5% zinc, and 0.5% iron. This certified composition ensures excellent corrosion resistance, high strength-to-weight ratio, and long-lasting durability.\n\nThese sheets are available in thickness options of 0.56 mm and 0.71 mm, making them suitable for roofing, cladding, fabrication, and industrial applications. Aluminium’s natural resistance to rust makes it an ideal choice for coastal areas and high-moisture environments.\n\nSourced from the trusted Jindal brand, these sheets guarantee consistent quality, superior finish, and reliable performance. Lightweight, easy to install, and low maintenance, Pure Aluminium Sheets provide a premium roofing and structural solution for residential, commercial, and industrial projects."
-}
+},
+{
+  id: "rv-tile-sheet",
+  title: "VV Tile Sheet",
+  image: img204,
+  shortDesc: "Certified Galvalume tile roofing sheets available in Glossy and Matte finishes.",
+  fullDesc: "VV Tile Sheets are manufactured using 100% certified Galvalume steel composed of 55% Aluminium, 43.4% Zinc, and 1.6% Silicon. This advanced coating provides excellent corrosion resistance, high durability, and long-term performance in harsh weather conditions.\n\nAvailable in thickness options of 0.45mm, 0.47mm, and 0.50mm, these sheets are designed to provide superior structural strength and protection. Customers can choose from 70 GSM, 150 GSM, and 200 GSM coating options for enhanced lifespan and environmental resistance.\n\nWith over 25 vibrant colour choices and both Glossy and Matte finish variants, VV Tile Sheets offer the aesthetic appeal of traditional roofing combined with modern engineering. Lightweight, easy to install, and low maintenance, they are ideal for residential homes, villas, commercial buildings, and architectural roofing projects requiring durability with premium appearance."
+},
+{
+  id: "rithvig-traditional-tile",
+  title: "VV Traditional Tile",
+  image: img205,
+  shortDesc: "Certified Galvalume traditional roofing tiles with high durability and classic appearance.",
+  fullDesc: "VV Traditional Tiles are manufactured using 100% certified Galvalume steel composed of 55% Aluminium, 43.4% Zinc, and 1.6% Silicon. This advanced coating provides excellent corrosion resistance, structural strength, and long-lasting roofing performance even in harsh environmental conditions.\n\nAvailable in thickness options of 0.45mm, 0.47mm, and 0.50mm, these tiles are engineered to provide superior load-bearing capacity and weather protection. Customers can choose from 70 GSM, 150 GSM, and 200 GSM coating options for enhanced durability and extended service life.\n\nWith 25+ vibrant colour options and both Glossy and Matte finish variants, VV Traditional Tiles combine timeless architectural aesthetics with modern engineering. Lightweight, easy to install, and low maintenance, they are ideal for residential homes, villas, temples, resorts, and commercial buildings requiring a traditional roof appearance with contemporary strength."
+},
 ];
